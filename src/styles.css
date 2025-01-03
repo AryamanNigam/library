@@ -152,4 +152,23 @@ label {
     text-overflow: ellipsis;
     white-space: nowrap;
     text-align: center;
+    border-radius: 10px;
+    cursor: pointer
+}
+
+.delete-btn {
+    background-image: url('../assets/delete-1487-svgrepo-com.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent; 
+}
+
+.delete-btn:hover {
+    filter: brightness(0.8); 
 }
