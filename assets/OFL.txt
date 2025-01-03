@@ -1,5 +1,4 @@
-Copyright (c) 2012 by Brian J. Bonislawsky DBA Astigmatic (AOETI)
-(astigma@astigmatic.com), with Reserved Font Names "Parisienne"
+Copyright 2023 The Playwrite Project Authors (https://github.com/TypeTogether/Playwrite)
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:
