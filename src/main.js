@@ -40,7 +40,6 @@ function addBookToLibrary() {
 
     const infoDiv = document.createElement("div");
     infoDiv.classList.add("book-info");
-    
 
     const readDiv = document.createElement("button");
     readDiv.classList.add("book-read");
@@ -49,19 +48,59 @@ function addBookToLibrary() {
     }
     else{
         readDiv.textContent = "Not Read";
-        readDiv.style.backgroundColor = "red";
+        readDiv.style.backgroundColor = "rgb(253, 164, 175)";
     }
+
+    let r = "#fda4af";
+    let y = "#fef08a";
+    let g = "#a7f3d0";
+    const colors = [r, y, g];
+    const statuses = ["Not Read", "Reading", "Read Already"];
+
+    let index = 0;
+    readDiv.addEventListener("click", () => {
+        readDiv.style.backgroundColor = colors[index];
+        readDiv.textContent = statuses[index];
+        index = (index + 1) % colors.length;
+    });
     infoDiv.appendChild(readDiv);
 
     const deleteButton = document.createElement("button");
     deleteButton.classList.add("delete-btn");
+    deleteButton.addEventListener("click", () => {
+        card.remove();
+    });
     infoDiv.appendChild(deleteButton);
 
     card.appendChild(infoDiv);
     content.appendChild(card);
-
 }
 
 const b = document.getElementById("submit");
 b.addEventListener("click", addBookToLibrary);
 
+const del = document.querySelectorAll(".delete-btn");
+del.forEach(button => {
+    button.addEventListener("click", () => {
+        button.parentElement.parentElement.remove();
+    });
+});
+
+
+
+const alter = document.querySelectorAll(".book-read");
+alter.forEach(button => {
+    let r = "#fda4af";
+    let y = "#fef08a";
+    let g = "#a7f3d0";
+
+    const colors = [r, y, g];
+    const statuses = ["Not Read", "Reading", "Read Already"];
+    let index = 0;
+
+    button.addEventListener("click", () => {
+        button.style.backgroundColor = colors[index];
+        button.textContent = statuses[index];
+        index = (index + 1) % colors.length;
+    });
+});
